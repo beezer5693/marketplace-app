@@ -4,8 +4,10 @@ const jwt = require('jsonwebtoken');
 
 const registerUser = asyncHandler(async (req, res) => {});
 const loginUser = asyncHandler(async (req, res) => {});
+const getLoggedInUser = asyncHandler(async (req, res) => {});
 
 module.exports = {
 	registerUser,
-	loginUser
+	loginUser,
+	getLoggedInUser
 };
