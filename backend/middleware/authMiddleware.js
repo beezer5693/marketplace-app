@@ -18,12 +18,14 @@ const authorizeUser = asyncHandler(async (req, res, next) => {
 			next();
 		} catch (error) {
 			console.log(error);
-			res.status(401).json({ message: 'Not authorized' });
+			res.status(401);
+			throw new Error('Not authorized');
 		}
 	}
 
 	if (!token) {
-		res.status(401).json({ message: 'Not authorized' });
+		res.status(401);
+		throw new Error('Not authorized');
 	}
 });
 
