@@ -64,7 +64,13 @@ const loginUser = asyncHandler(async (req, res) => {
 	}
 });
 
-const getLoggedInUser = asyncHandler(async (req, res) => {});
+const getLoggedInUser = asyncHandler(async (req, res) => {
+	res.status(200).json({
+		_id: req.user._id,
+		name: req.user.name,
+		email: req.user.email
+	});
+});
 
 module.exports = {
 	registerUser,
